@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2025 - Actual",
+    "type": "research",
+    "title": "Research visiting scholar in Plant Pathology",
+    "org": "Louisiana State University · AgCenter · Rayne, LA",
+    "logo": "assets/logos/lsu.svg",
+    "description": "Computer vision for rice seed disease detection and yield-loss estimation to support crop protection decisions."
+  },
+  {
+    "date": "2024 - Actual",
+    "type": "research",
+    "title": "PhD Candidate in Plant Pathology",
+    "org": "Universidade Federal de Viçosa · Viçosa, MG",
+    "logo": "assets/logos/ufv.svg",
+    "description": "Research on plant disease epidemiology, quantitative modeling and computer vision for crop protection."
+  },
+  {
+    "date": "2021 - 2023",
+    "type": "education",
+    "title": "Masters Degree in Plant Pathology",
+    "org": "Universidade de Brasília · Brasília, DF",
+    "logo": "assets/logos/unb.svg",
+    "description": "Research on plant parasitic nematodes epidemiology and quantitative modeling."
+  }
+]

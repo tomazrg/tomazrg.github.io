@@ -1,0 +1,10 @@
+{
+  "focus": {
+    "labels": ["Área 1", "Área 2", "Área 3", "Área 4", "Área 5", "Área 6"],
+    "values": [90, 85, 80, 75, 70, 65]
+  },
+  "skills": {
+    "labels": ["Python", "R", "Estatística", "Ferramenta 4", "Ferramenta 5", "Ferramenta 6"],
+    "values": [90, 85, 80, 75, 70, 65]
+  }
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "title": "From weather history to yield loss: introducing EpiExposure",
+    "date": "2026-11-21",
+    "readTime": "7 min",
+    "excerpt": "An open-source R package that turns distributed lag nonlinear models into a complete, reproducible workflow for plant disease epidemiology.",
+    "tags": ["EpiExposure", "R package", "DLNM"],
+    "file": "2026-11-21-epiexposure.md"
+  },
+  {
+    "title": "Weather doesn't strike once: what distributed lag models reveal about soybean target spot",
+    "date": "2026-11-20",
+    "readTime": "8 min",
+    "excerpt": "Not only how much weather, but when it mattered. How DLNMs uncovered delayed, phase-specific weather effects on target spot epidemics in Brazil.",
+    "tags": ["DLNM", "Target spot", "Soybean", "Weather"],
+    "file": "2026-11-20-dlnm-target-spot.md"
+  }
+]

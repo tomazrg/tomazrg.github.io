@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Soybean Target Spot",
+    "description": "Disease–weather analyses, disease risk prediction and yield-loss estimation for target spot in soybean.",
+    "icon": "fa-solid fa-cloud-sun-rain",
+    "categories": ["Soybean"],
+    "tags": ["Disease-weather", "Risk prediction", "Yield loss"],
+    "repo": "",
+    "demo": ""
+  },
+  {
+    "title": "Cotton Target Spot",
+    "description": "Disease control strategies and yield-loss estimation for target spot in cotton.",
+    "icon": "fa-solid fa-satellite",
+    "categories": ["Cotton"],
+    "tags": ["Yield loss", "Disease control"],
+    "repo": "",
+    "demo": ""
+  },
+  {
+    "title": "Rice Kernel Smut",
+    "description": "Remote sensing approaches to detect and monitor kernel smut in rice.",
+    "icon": "fa-solid fa-satellite-dish",
+    "categories": ["Rice"],
+    "tags": ["Computer vision", "Remote sensing"],
+    "repo": "",
+    "demo": ""
+  },
+  {
+    "title": "Rice Sheath Blight",
+    "description": "Disease control strategies and yield-loss estimation for sheath blight in rice.",
+    "icon": "fa-solid fa-shield-virus",
+    "categories": ["Rice"],
+    "tags": ["Yield loss", "Disease control"],
+    "repo": "",
+    "demo": ""
+  },
+  {
+    "title": "Maize Foliar Diseases",
+    "description": "Profitability analyses of fungicide use against foliar diseases in maize under low disease pressure.",
+    "icon": "fa-solid fa-sack-dollar",
+    "categories": ["Maize"],
+    "tags": ["Profitability", "Fungicides"],
+    "repo": "",
+    "demo": "https://tomazrg.github.io/paper_complex_profit/"
+  },
+  {
+    "title": "Maize Nematodes",
+    "description": "Spatial distribution of nematodes in maize and the impact of environmental and cultural drivers.",
+    "icon": "fa-solid fa-map-location-dot",
+    "categories": ["Maize"],
+    "tags": ["Spatial analysis", "Environmental drivers"],
+    "repo": "",
+    "demo": ""
+  },
+  {
+    "title": "Bacterial Leaf Streak Yield Loss",
+    "description": "Stochastic modeling of yield loss caused by bacterial leaf streak in corn.",
+    "icon": "fa-solid fa-chart-line",
+    "categories": ["Maize"],
+    "tags": ["Stochastic modeling", "Yield loss"],
+    "repo": "",
+    "demo": "https://tomazrg.github.io/paper-BLS-corn-damage/"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "group": "Languages",
+    "icon": "fa-solid fa-code",
+    "items": [
+      { "name": "R", "icon": "fa-brands fa-r-project" },
+      { "name": "Python", "icon": "fa-brands fa-python" },
+      { "name": "Quarto & Markdown", "icon": "fa-brands fa-markdown" }
+    ]
+  },
+  {
+    "group": "Modeling (R packages)",
+    "icon": "fa-solid fa-chart-line",
+    "items": [
+      { "name": "EpiExposure", "icon": "fa-solid fa-star", "link": "https://tomazrg.github.io/EpiExposure/" },
+      "dlnm", "glmmTMB", "mgcv", "brms", "r4pde", "tidyverse", "ggplot2"
+    ]
+  },
+  {
+    "group": "Spatial & Remote Sensing",
+    "icon": "fa-solid fa-satellite",
+    "items": ["terra", "sf", "QGIS", "ERA5 reanalysis"]
+  },
+  {
+    "group": "Computer Vision",
+    "icon": "fa-solid fa-eye",
+    "items": ["PyTorch", "OpenCV", "scikit-learn"]
+  },
+  {
+    "group": "Workflow",
+    "icon": "fa-solid fa-gears",
+    "items": [
+      { "name": "Git & GitHub", "icon": "fa-brands fa-github", "link": "https://github.com/tomazrg" },
+      "RStudio / Positron", "VS Code", "GitHub Pages"
+    ]
+  }
+]

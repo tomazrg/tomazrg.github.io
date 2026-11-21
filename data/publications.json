@@ -1,0 +1,47 @@
+[
+  {
+    "title": "EpiExposure: An R Package for Exposure-Lag-Response Analysis in Plant Disease Epidemiology",
+    "authors": "Tomaz, R. G., Del Ponte, E. M., and Dalla Lana, F.",
+    "venue": "Zenodo (preprint)",
+    "year": 2026,
+    "link": "https://tomazrg.github.io/paper_EpiExposure_package/",
+    "pdf": "",
+    "doi": "10.5281/zenodo.24408928"
+  },
+  {
+    "title": "Exposure–Lag Responses of Soybean Target Spot to Climatic Proxies: A Distributed Lag Nonlinear Modeling Approach",
+    "authors": "Tomaz, R. G., Del Ponte, E. M., Godoy, C. V., and Dalla Lana, F.",
+    "venue": "Phytopathology (published)",
+    "year": 2026,
+    "link": "https://tomazrg.github.io/paper_EpiExposure_package/",
+    "pdf": "",
+    "doi": "https://doi.org/10.1094/PHYTO-06-26-0185-R"
+  },
+  {
+    "title": "Economic Returns on Fungicide Use Across Soybean Cultivars With Varying Tolerance to Target Spot Caused by Corynespora cassiicola",
+    "authors": "Tomaz, R. G., Godoy, C. V., and Del Ponte, E. M. ",
+    "venue": "Journal of Phytopathology (published)",
+    "year": 2025,
+    "link": "https://tomazrg.github.io/paper_target_spot_profit/",
+    "pdf": "",
+    "doi": "https://doi.org/10.1111/jph.70138"
+  },
+  {
+    "title": "When does fungicide use pay off in maize? Evidence from low foliar disease pressure environments in southern Brazil",
+    "authors": "Tomaz, R. G., Lujan, D. W., Custódio, A. A., Debona, D., Garbuglio, D. D., and Del Ponte, E. M. ",
+    "venue": "Journal of Phytopathology (published)",
+    "year": 2026,
+    "link": "https://tomazrg.github.io/paper_complex_profit/",
+    "pdf": "",
+    "doi": "https://doi.org/10.1111/jph.70330"
+  },
+  {
+    "title": "Stochastic modeling of yield loss due to bacterial leaf streak in corn",
+    "authors": "Tomaz, R. G., Fantin, L. H., Madalosso, T., Braga, K., Roy, J. M. T., Canteri, M. G., Custódio, A. A., and Del Ponte, E. M.",
+    "venue": "European Journal of Plant Pathology",
+    "year": 2025,
+    "link": "https://tomazrg.github.io/paper-BLS-corn-damage/",
+    "pdf": "",
+    "doi": "https://doi.org/10.1007/s10658-025-03101-5"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Emerson M. Del Ponte",
+    "role": "Advisor",
+    "university": "Universidade Federal de Viçosa",
+    "photo": "assets/mentees/delponte.png",
+    "linkedin": "https://www.linkedin.com/in/emerson-m-del-ponte-61678ba1/",
+    "scholar": "https://scholar.google.com/citations?user=LgNDabAAAAAJ&hl=en",
+    "email": ""
+  },
+  {
+    "name": "Felipe Dalla Lana",
+    "role": "Advisor",
+    "university": "Louisiana State University",
+    "photo": "assets/mentees/dallalana.png",
+    "linkedin": "https://www.linkedin.com/in/felipedallalana/",
+    "scholar": "https://scholar.google.com/citations?hl=en&user=eJc-rxcAAAAJ",
+    "email": ""
+  },
+  {
+    "name": "Cláudia Vieira Godoy",
+    "role": "Collaborator",
+    "university": "Embrapa Soja",
+    "photo": "assets/mentees/claudia.png",
+    "linkedin": "https://www.linkedin.com/in/claudia-vieira-godoy-7987403a0/",
+    "scholar": "https://scholar.google.com/citations?hl=en&user=yGN7ToQAAAAJ",
+    "email": ""
+  },
+  {
+    "name": "Ivan Grijalva",
+    "role": "Collaborator",
+    "university": "Louisiana State University",
+    "photo": "assets/mentees/ivan.png",
+    "linkedin": "https://www.linkedin.com/in/ivan-grijalva-06092b87/",
+    "scholar": "https://scholar.google.com/citations?hl=en&user=JnxtlU4AAAAJ",
+    "email": ""
+  }
+]
