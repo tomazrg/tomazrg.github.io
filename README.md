@@ -1,8 +1,8 @@
-# tomazrg.github.io
+# Ricardo G. Tomáz — Personal Website
 
 My personal website, where I share my research on plant disease epidemiology, projects, and a few thoughts along the way.
 
-🌐 **Live site:** https://tomazrg.github.io
+🌐 **Website:** https://tomazrg.github.io
 
 ## What's inside
 
