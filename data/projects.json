@@ -36,6 +36,15 @@
     "demo": ""
   },
   {
+    "title": "Soybean Target Spot",
+    "description": "Economic returns of fungicides for target spot across soybean cultivars.",
+    "icon": "fa-solid fa-sack-dollar",
+    "categories": ["Soybean"],
+    "tags": ["Yield-loss", "Break-even"],
+    "repo": "",
+    "demo": ""
+  },
+  {
     "title": "Cotton Target Spot",
     "description": "Disease control strategies and yield-loss estimation for target spot in cotton.",
     "icon": "fa-solid fa-sack-dollar",
