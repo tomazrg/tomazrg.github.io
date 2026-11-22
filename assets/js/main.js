@@ -12,7 +12,7 @@ const SITE = {
   // ATENÇÃO: cada frase fica entre aspas simples. Não use apóstrofo (') dentro delas.
   typedPhrases: ['to disease risk', 'to crop protection', 'to decisions in the field', 'to sustainable management', 'to applied science'],
   // Idioma das datas: 'pt-BR' (português) ou 'en-US' (inglês).
-  locale: 'pt-BR'
+  locale: 'en-US'
 };
 /* ─────────────────────────────────────────────────────────────────── */
 
@@ -182,7 +182,7 @@ async function loadJourney() {
       </div>`).join('');
     root.querySelectorAll('.tl-item').forEach(observeReveal);
   } catch (e) {
-    root.innerHTML = `<p class="loading">Não foi possível carregar a trajetória.</p>`;
+    root.innerHTML = `<p class="loading">Could not load the journey.</p>`;
   }
 }
 
@@ -191,7 +191,7 @@ let _projects = [];
 async function loadProjects() {
   const grid = document.getElementById('projects-grid');
   const filters = document.getElementById('project-filters');
-  grid.innerHTML = `<p class="loading">Carregando projetos…</p>`;
+  grid.innerHTML = `<p class="loading">Loading projects…</p>`;
   try {
     _projects = await getJSON('data/projects.json');
     const cats = ['All', ...new Set(_projects.flatMap(p => p.categories || []))];
@@ -207,7 +207,7 @@ async function loadProjects() {
     );
     renderProjects('All');
   } catch (e) {
-    grid.innerHTML = `<p class="loading">Não foi possível carregar os projetos.</p>`;
+    grid.innerHTML = `<p class="loading">Could not load projects.</p>`;
   }
 }
 function renderProjects(cat) {
@@ -230,7 +230,7 @@ function renderProjects(cat) {
 /* ── Publications ────────────────────────────────────────────────── */
 async function loadPublications() {
   const root = document.getElementById('pub-list');
-  root.innerHTML = `<p class="loading">Carregando publicações…</p>`;
+  root.innerHTML = `<p class="loading">Loading publications…</p>`;
   try {
     const pubs = await getJSON('data/publications.json');
     const isFirstAuthor = publication => authorPattern(true).test(publication.authors || '');
@@ -252,7 +252,7 @@ async function loadPublications() {
       </article>`).join('');
     root.querySelectorAll('.pub-item').forEach(observeReveal);
   } catch (e) {
-    root.innerHTML = `<p class="loading">Não foi possível carregar as publicações.</p>`;
+    root.innerHTML = `<p class="loading">Could not load publications.</p>`;
   }
 }
 function highlightAuthor(authors) {
@@ -269,7 +269,7 @@ function authorPattern(atStart) {
 let _posts = [];
 async function loadBlog() {
   const grid = document.getElementById('blog-grid');
-  grid.innerHTML = `<p class="loading">Carregando posts…</p>`;
+  grid.innerHTML = `<p class="loading">Loading posts…</p>`;
   try {
     _posts = await getJSON('data/blog/posts.json');
     _posts.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -285,7 +285,7 @@ async function loadBlog() {
           <h3>${escapeHtml(p.title)}</h3>
           <p class="blog-excerpt">${escapeHtml(p.excerpt || '')}</p>
           <div class="blog-tags">${(p.tags || []).map(t => `<span>${escapeHtml(t)}</span>`).join('')}</div>
-          <span class="blog-read">Ler mais <i class="fa-solid fa-arrow-right"></i></span>
+          <span class="blog-read">Read more <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </article>`).join('');
     grid.querySelectorAll('.blog-card').forEach(card => {
@@ -296,7 +296,7 @@ async function loadBlog() {
     const requestedIndex = _posts.findIndex(post => postSlug(post) === requestedPost);
     if (requestedIndex >= 0) openPost(requestedIndex);
   } catch (e) {
-    grid.innerHTML = `<p class="loading">Nenhum post ainda — adicione em <code>data/blog/</code>.</p>`;
+    grid.innerHTML = `<p class="loading">No posts yet.</p>`;
   }
   initModal();
 }
@@ -306,7 +306,7 @@ function renderLatestPost(post) {
   document.getElementById('latest-post-title').textContent = post.title;
   document.getElementById('latest-post-excerpt').textContent = post.excerpt || '';
   document.getElementById('latest-post-meta').innerHTML =
-    `<i class="fa-regular fa-calendar"></i> ${formatDate(post.date)} &nbsp;·&nbsp; ${escapeHtml(post.readTime || '3 min')} de leitura`;
+    `<i class="fa-regular fa-calendar"></i> ${formatDate(post.date)} &nbsp;·&nbsp; ${escapeHtml(post.readTime || '3 min')} read`;
   link.href = `?post=${encodeURIComponent(postSlug(post))}`;
   link.addEventListener('click', event => {
     event.preventDefault();
@@ -320,7 +320,7 @@ async function openPost(idx, updateUrl = false) {
   const post = _posts[idx];
   const modal = document.getElementById('post-modal');
   const body = document.getElementById('post-content');
-  body.innerHTML = `<p class="loading">Carregando…</p>`;
+  body.innerHTML = `<p class="loading">Loading…</p>`;
   openModal();
   if (updateUrl) {
     const url = new URL(location.href);
@@ -330,10 +330,10 @@ async function openPost(idx, updateUrl = false) {
   try {
     const md = await fetch(`data/blog/${post.file}`, { cache: 'no-cache' }).then(r => r.text());
     body.innerHTML =
-      `<div class="post-head-meta"><i class="fa-regular fa-calendar"></i> ${formatDate(post.date)} · ${escapeHtml(post.readTime || '3 min')} de leitura</div>` +
+      `<div class="post-head-meta"><i class="fa-regular fa-calendar"></i> ${formatDate(post.date)} · ${escapeHtml(post.readTime || '3 min')} read</div>` +
       marked.parse(md);
   } catch (e) {
-    body.innerHTML = `<p>Não foi possível carregar este post.</p>`;
+    body.innerHTML = `<p>Could not load this post.</p>`;
   }
 }
 
@@ -357,7 +357,7 @@ function closeModal() {
 /* ── Awards ──────────────────────────────────────────────────────── */
 async function loadAwards() {
   const grid = document.getElementById('awards-grid');
-  grid.innerHTML = `<p class="loading">Carregando prêmios…</p>`;
+  grid.innerHTML = `<p class="loading">Loading awards…</p>`;
   try {
     const awards = await getJSON('data/awards.json');
     grid.innerHTML = awards.map(a => `
@@ -370,7 +370,7 @@ async function loadAwards() {
       </article>`).join('');
     grid.querySelectorAll('.award-card').forEach(observeReveal);
   } catch (e) {
-    grid.innerHTML = `<p class="loading">Não foi possível carregar os prêmios.</p>`;
+    grid.innerHTML = `<p class="loading">Could not load awards.</p>`;
   }
 }
 
@@ -378,7 +378,7 @@ async function loadAwards() {
 async function loadMentees() {
   const grid = document.getElementById('mentor-grid');
   if (!grid) return;
-  grid.innerHTML = `<p class="loading">Carregando…</p>`;
+  grid.innerHTML = `<p class="loading">Loading…</p>`;
   try {
     const mentees = await getJSON('data/mentees.json');
     grid.innerHTML = mentees.map(m => `
@@ -395,7 +395,7 @@ async function loadMentees() {
       </article>`).join('');
     grid.querySelectorAll('.mentor-card').forEach(observeReveal);
   } catch (e) {
-    grid.innerHTML = `<p class="loading">Adicione as pessoas que você orienta em <code>data/mentees.json</code>.</p>`;
+    grid.innerHTML = `<p class="loading">Could not load collaborators.</p>`;
   }
 }
 
@@ -404,7 +404,7 @@ let _gallery = [];
 async function loadGallery() {
   const grid = document.getElementById('gallery-grid');
   if (!grid) return;
-  grid.innerHTML = `<p class="loading">Carregando…</p>`;
+  grid.innerHTML = `<p class="loading">Loading…</p>`;
   try {
     _gallery = await getJSON('data/gallery.json');
     _gallery.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
@@ -420,7 +420,7 @@ async function loadGallery() {
       item.addEventListener('click', () => openLightbox(+item.dataset.idx))
     );
   } catch (e) {
-    grid.innerHTML = `<p class="loading">Adicione fotos em <code>data/gallery.json</code> (imagens em <code>assets/gallery/</code>).</p>`;
+    grid.innerHTML = `<p class="loading">Could not load the gallery.</p>`;
   }
   initLightbox();
 }
