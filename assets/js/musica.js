@@ -1,4 +1,4 @@
-/* ✏️ CONFIGURAÇÃO ───────────────────────────────────────────────────── */
+/* SETTINGS ───────────────────────────────────────────────────── */
 const MUSIC = {
   file: 'assets/audio/music.mp3', // path to the music file
   volume: 0.20,                   // final volume (0 to 1)
