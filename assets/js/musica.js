@@ -1,24 +1,9 @@
-/* ════════════════════════════════════════════════════════════════════
-   Música de fundo — LIGADA por padrão, com botão para desligar 🔊
-     • ao abrir o site, tenta tocar na hora;
-     • se o navegador bloquear (regra de todos os navegadores), começa
-       no primeiro clique, toque ou tecla do visitante em qualquer lugar;
-     • botão no menu, ao lado do botão de tema, para desligar/religar;
-     • volume suave (fade) e loop;
-     • se o visitante desligar, o site lembra e não toca nas próximas visitas.
-
-   COMO USAR:
-     1. Coloque sua música em assets/audio/ (ex.: assets/audio/music.mp3)
-     2. No index.html, logo DEPOIS das outras linhas de script, adicione:
-        <script src="assets/js/musica.js"></script>
-   ════════════════════════════════════════════════════════════════════ */
-
 /* ✏️ CONFIGURAÇÃO ───────────────────────────────────────────────────── */
 const MUSIC = {
-  file: 'assets/audio/music.mp3', // caminho da música
-  volume: 0.35,                   // volume final (0 a 1)
-  fadeMs: 1500,                   // duração do fade in/out em milissegundos
-  startOn: true                   // true = começa ligada; false = só toca se o visitante clicar
+  file: 'assets/audio/music.mp3', // path to the music file
+  volume: 0.20,                   // final volume (0 to 1)
+  fadeMs: 1500,                   // fade in/out duration in milliseconds
+  startOn: true                   // true = starts enabled; false = only plays if the visitor clicks
 };
 /* ─────────────────────────────────────────────────────────────────── */
 
@@ -27,7 +12,7 @@ const MUSIC = {
     const themeBtn = document.getElementById('theme-toggle');
     if (!themeBtn || document.getElementById('music-toggle')) return;
 
-    // áudio
+    // audio
     const audio = new Audio(MUSIC.file);
     audio.loop = true;
     audio.addEventListener('playing', () => btn.classList.add('sounding'));
@@ -35,14 +20,14 @@ const MUSIC = {
     audio.preload = 'none';
     audio.volume = 0;
 
-    // botão (inserido antes do botão de tema)
+    // button (inserted before the theme button)
     const li = document.createElement('li');
     li.innerHTML = '<button id="music-toggle" aria-label="Play music" title="Play music"><i class="fa-solid fa-volume-xmark"></i></button>';
     themeBtn.closest('li').before(li);
     const btn = li.querySelector('button');
     const icon = btn.querySelector('i');
 
-    // estilo igual ao do botão de tema + animação quando está tocando
+    // same style as the theme button + pulse animation while playing
     const css = document.createElement('style');
     css.textContent = `
       #music-toggle {
@@ -85,7 +70,7 @@ const MUSIC = {
         fadeTo(MUSIC.volume);
         save('on');
       } catch (e) {
-        console.warn('[music] não foi possível tocar:', e);
+        console.warn('[music] could not play:', e);
         if (wanted) addStarters(); else setUI(false);
       }
     }
@@ -96,7 +81,7 @@ const MUSIC = {
     }
     function save(v) { try { localStorage.setItem('music', v); } catch {} }
 
-    // estado desejado: ligado por padrão, a menos que o visitante tenha desligado antes
+    // desired state: enabled by default, unless the visitor has disabled it before
     let saved = null;
     try { saved = localStorage.getItem('music'); } catch {}
     let wanted = saved ? saved === 'on' : MUSIC.startOn;
@@ -107,7 +92,7 @@ const MUSIC = {
       else { wanted = true; play(); }
     });
 
-    // primeira interação em qualquer lugar da página inicia a música (se bloqueada)
+    // first interaction anywhere on the page starts the music (if autoplay was blocked)
     const starterEvents = ['pointerdown', 'keydown', 'touchstart'];
     function starter(e) {
       if (e.target.closest && e.target.closest('#music-toggle')) return;
@@ -118,11 +103,11 @@ const MUSIC = {
     function removeStarters() { starterEvents.forEach(ev => document.removeEventListener(ev, starter)); }
 
     if (wanted) {
-      setUI(true);                       // botão já aparece como "som ligado"
+      setUI(true);                       // button already appears as "sound on"
       audio.preload = 'auto';
       audio.play()
         .then(() => { fadeTo(MUSIC.volume); save('on'); })
-        .catch(() => addStarters());     // bloqueado: espera a primeira interação
+        .catch(() => addStarters());     // blocked: waits for the first interaction
     }
   }
 
