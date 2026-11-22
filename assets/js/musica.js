@@ -1,11 +1,11 @@
 /* ════════════════════════════════════════════════════════════════════
-   Música de fundo com botão liga/desliga 🎵
-     • botão no menu, ao lado do botão de tema;
-     • a música entra e sai com volume suave (fade);
-     • toca em loop;
-     • o site lembra a escolha do visitante: se ele deixou ligada,
-       a música volta no primeiro clique/toque da próxima visita
-       (os navegadores não permitem som antes de uma interação).
+   Música de fundo — LIGADA por padrão, com botão para desligar 🔊
+     • ao abrir o site, tenta tocar na hora;
+     • se o navegador bloquear (regra de todos os navegadores), começa
+       no primeiro clique, toque ou tecla do visitante em qualquer lugar;
+     • botão no menu, ao lado do botão de tema, para desligar/religar;
+     • volume suave (fade) e loop;
+     • se o visitante desligar, o site lembra e não toca nas próximas visitas.
 
    COMO USAR:
      1. Coloque sua música em assets/audio/ (ex.: assets/audio/music.mp3)
@@ -17,7 +17,8 @@
 const MUSIC = {
   file: 'assets/audio/music.mp3', // caminho da música
   volume: 0.35,                   // volume final (0 a 1)
-  fadeMs: 1500                    // duração do fade in/out em milissegundos
+  fadeMs: 1500,                   // duração do fade in/out em milissegundos
+  startOn: true                   // true = começa ligada; false = só toca se o visitante clicar
 };
 /* ─────────────────────────────────────────────────────────────────── */
 
@@ -29,12 +30,14 @@ const MUSIC = {
     // áudio
     const audio = new Audio(MUSIC.file);
     audio.loop = true;
+    audio.addEventListener('playing', () => btn.classList.add('sounding'));
+    audio.addEventListener('pause', () => btn.classList.remove('sounding'));
     audio.preload = 'none';
     audio.volume = 0;
 
     // botão (inserido antes do botão de tema)
     const li = document.createElement('li');
-    li.innerHTML = '<button id="music-toggle" aria-label="Play music" title="Play music"><i class="fa-solid fa-music"></i></button>';
+    li.innerHTML = '<button id="music-toggle" aria-label="Play music" title="Play music"><i class="fa-solid fa-volume-xmark"></i></button>';
     themeBtn.closest('li').before(li);
     const btn = li.querySelector('button');
     const icon = btn.querySelector('i');
@@ -49,9 +52,9 @@ const MUSIC = {
       }
       #music-toggle:hover { transform: scale(1.08); }
       #music-toggle.playing { color: var(--brand); border-color: var(--brand); }
-      #music-toggle.playing i { animation: music-pulse 1.6s ease-in-out infinite; }
+      #music-toggle.sounding i { animation: music-pulse 1.6s ease-in-out infinite; }
       @keyframes music-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.22); } }
-      @media (prefers-reduced-motion: reduce) { #music-toggle.playing i { animation: none; } }
+      @media (prefers-reduced-motion: reduce) { #music-toggle.sounding i { animation: none; } }
     `;
     document.head.appendChild(css);
 
@@ -70,7 +73,7 @@ const MUSIC = {
 
     function setUI(on) {
       btn.classList.toggle('playing', on);
-      icon.className = on ? 'fa-solid fa-volume-high' : 'fa-solid fa-music';
+      icon.className = on ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
       const label = on ? 'Pause music' : 'Play music';
       btn.setAttribute('aria-label', label); btn.title = label;
     }
@@ -83,7 +86,7 @@ const MUSIC = {
         save('on');
       } catch (e) {
         console.warn('[music] não foi possível tocar:', e);
-        setUI(false);
+        if (wanted) addStarters(); else setUI(false);
       }
     }
     function pause() {
@@ -93,20 +96,33 @@ const MUSIC = {
     }
     function save(v) { try { localStorage.setItem('music', v); } catch {} }
 
+    // estado desejado: ligado por padrão, a menos que o visitante tenha desligado antes
+    let saved = null;
+    try { saved = localStorage.getItem('music'); } catch {}
+    let wanted = saved ? saved === 'on' : MUSIC.startOn;
+
     btn.addEventListener('click', e => {
       e.stopPropagation();
-      btn.classList.contains('playing') ? pause() : play();
+      if (wanted) { wanted = false; removeStarters(); pause(); }
+      else { wanted = true; play(); }
     });
 
-    // se o visitante deixou ligada na última visita, volta no primeiro clique/toque
-    let wanted = false;
-    try { wanted = localStorage.getItem('music') === 'on'; } catch {}
+    // primeira interação em qualquer lugar da página inicia a música (se bloqueada)
+    const starterEvents = ['pointerdown', 'keydown', 'touchstart'];
+    function starter(e) {
+      if (e.target.closest && e.target.closest('#music-toggle')) return;
+      removeStarters();
+      if (wanted && audio.paused) play();
+    }
+    function addStarters() { starterEvents.forEach(ev => document.addEventListener(ev, starter, { passive: true })); }
+    function removeStarters() { starterEvents.forEach(ev => document.removeEventListener(ev, starter)); }
+
     if (wanted) {
-      const resume = e => {
-        if (e.target.closest && e.target.closest('#music-toggle')) return;
-        play();
-      };
-      document.addEventListener('pointerdown', resume, { once: true });
+      setUI(true);                       // botão já aparece como "som ligado"
+      audio.preload = 'auto';
+      audio.play()
+        .then(() => { fadeTo(MUSIC.volume); save('on'); })
+        .catch(() => addStarters());     // bloqueado: espera a primeira interação
     }
   }
 
