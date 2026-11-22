@@ -1,17 +1,44 @@
 [
   {
+    "title": "EpiExposure",
+    "description": "An R Package for Exposure-Lag-Response Analysis in Plant Disease Epidemiology",
+    "icon": "fa-solid fa-chart-line",
+    "categories": ["Tools"],
+    "tags": ["DLNM", "R package"],
+    "repo": "",
+    "demo": ""
+  },
+  {
+    "title": "Wheat Blast Economic Risk",
+    "description": "Interactive tool for estimating break-even probability and yield gains amon wheat cultivars.",
+    "icon": "fa-solid fa-chart-line",
+    "categories": ["Tools"],
+    "tags": ["Break-even", "Simulation"],
+    "repo": "",
+    "demo": ""
+  },
+  {
+    "title": "Maize Disease Complex Yield Loss",
+    "description": "Interactive tool combining disease severity, yield potential, crop price, and management costs to estimate maize yield losses.",
+    "icon": "fa-solid fa-sack-dollar",
+    "categories": ["Tools"],
+    "tags": ["Yield-loss", "Simulation"],
+    "repo": "",
+    "demo": ""
+  },
+  {
     "title": "Soybean Target Spot",
     "description": "Disease–weather analyses, disease risk prediction and yield-loss estimation for target spot in soybean.",
     "icon": "fa-solid fa-cloud-sun-rain",
     "categories": ["Soybean"],
-    "tags": ["Disease-weather", "Risk prediction", "Yield loss"],
+    "tags": ["Disease-weather", "Risk prediction"],
     "repo": "",
     "demo": ""
   },
   {
     "title": "Cotton Target Spot",
     "description": "Disease control strategies and yield-loss estimation for target spot in cotton.",
-    "icon": "fa-solid fa-satellite",
+    "icon": "fa-solid fa-sack-dollar",
     "categories": ["Cotton"],
     "tags": ["Yield loss", "Disease control"],
     "repo": "",
@@ -19,9 +46,9 @@
   },
   {
     "title": "Rice Kernel Smut",
-    "description": "Remote sensing approaches to detect and monitor kernel smut in rice.",
+    "description": "Computer vision approaches to detect and quantify kernel smut in rice.",
     "icon": "fa-solid fa-satellite-dish",
-    "categories": ["Rice"],
+    "categories": ["Rice", "Tools"],
     "tags": ["Computer vision", "Remote sensing"],
     "repo": "",
     "demo": ""
@@ -42,7 +69,7 @@
     "categories": ["Maize"],
     "tags": ["Profitability", "Fungicides"],
     "repo": "",
-    "demo": "https://tomazrg.github.io/paper_complex_profit/"
+    "demo": ""
   },
   {
     "title": "Maize Nematodes",
@@ -60,6 +87,24 @@
     "categories": ["Maize"],
     "tags": ["Stochastic modeling", "Yield loss"],
     "repo": "",
-    "demo": "https://tomazrg.github.io/paper-BLS-corn-damage/"
+    "demo": ""
+  },
+  {
+    "title": "Potato Nematodes",
+    "description": "Meta-analysis of the chemical control of nematodes in potato.",
+    "icon": "fa-solid fa-chart-line",
+    "categories": ["Potato"],
+    "tags": ["Meta-analysis", "Chemical control"],
+    "repo": "",
+    "demo": ""
+  },
+  {
+    "title": "Wheat Yellow Spot",
+    "description": "Development of standardad area diagrams (SAD) for wheat yellow spot.",
+    "icon": "fa-solid fa-chart-line",
+    "categories": ["Wheat"],
+    "tags": ["Phytopatometry", "RGB imagery"],
+    "repo": "",
+    "demo": ""
   }
 ]

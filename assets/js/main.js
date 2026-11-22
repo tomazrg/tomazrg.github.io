@@ -220,8 +220,8 @@ function renderProjects(cat) {
       <p class="pc-desc">${escapeHtml(p.description)}</p>
       <div class="pc-tags">${(p.tags || []).map(t => `<span>${escapeHtml(t)}</span>`).join('')}</div>
       <div class="pc-links">
-        ${p.repo ? `<a href="${escapeAttr(p.repo)}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Código</a>` : ''}
-        ${p.demo ? `<a href="${escapeAttr(p.demo)}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>` : ''}
+        ${p.repo ? `<a href="${escapeAttr(p.repo)}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>` : ''}
+        ${p.demo ? `<a href="${escapeAttr(p.demo)}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Website</a>` : ''}
       </div>
     </article>`).join('');
   grid.querySelectorAll('.project-card').forEach(observeReveal);
@@ -243,7 +243,7 @@ async function loadPublications() {
           <p class="pub-authors">${highlightAuthor(p.authors || '')}</p>
           <p class="pub-venue">${escapeHtml(p.venue || '')}</p>
           <div class="pub-links">
-            ${p.link ? `<a href="${escapeAttr(p.link)}" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> Ver</a>` : ''}
+            ${p.link ? `<a href="${escapeAttr(p.link)}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>` : ''}
             ${p.pdf ? `<a href="${escapeAttr(p.pdf)}" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> PDF</a>` : ''}
             ${p.doi ? `<a href="https://doi.org/${escapeAttr(p.doi)}" target="_blank" rel="noopener"><i class="fa-solid fa-fingerprint"></i> DOI</a>` : ''}
             ${p.scholar ? `<a href="${escapeAttr(p.scholar)}" target="_blank" rel="noopener"><i class="fa-solid fa-graduation-cap"></i> Scholar</a>` : ''}
