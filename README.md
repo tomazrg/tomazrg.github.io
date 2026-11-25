@@ -11,10 +11,6 @@ My personal website, where I share my research on plant disease epidemiology, pr
 - **Blog** posts on distributed lag models, EpiExposure, and research life
 - **EpiExposure**, an R package for exposure–lag–response analysis ([docs](https://tomazrg.github.io/EpiExposure/))
 
-## How it's built
-
-A static site (HTML, CSS, and JavaScript) hosted on GitHub Pages. All content lives in JSON and Markdown files under `data/`, so updating the site means editing text files rather than code.
-
 ## Contact
 
 Ricardo G. Tomáz · ricardogomesagro@gmail.com

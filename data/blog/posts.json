@@ -1,6 +1,6 @@
 [
   {
-    "title": "From weather history to yield loss: introducing EpiExposure",
+    "title": "From weather profile to yield loss: introducing EpiExposure",
     "date": "2026-11-21",
     "readTime": "7 min",
     "excerpt": "An open-source R package that turns distributed lag nonlinear models into a complete, reproducible workflow for plant disease epidemiology.",
