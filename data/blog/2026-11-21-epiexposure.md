@@ -1,4 +1,4 @@
-# From weather history to yield loss: introducing EpiExposure
+# From weather profile to yield loss: introducing EpiExposure
 
 In my previous post, I described how distributed lag nonlinear models (DLNMs) helped us understand *when* weather matters for soybean target spot. The results were exciting. The road to get there was not.
 
