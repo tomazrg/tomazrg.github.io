@@ -109,4 +109,4 @@ EpiExposure organizes **conditional associations**, not causal effects. Simulati
 
 *Preprint: Tomáz, R. G., Del Ponte, E. M., and Dalla Lana, F. EpiExposure: An R Package for Exposure-Lag-Response Analysis in Plant Disease Epidemiology.*
 
-EpiExposure is an open-source project, and it will grow with the community. If you work with plant disease and weather, or any exposure measured over time, I would love to see what you build with it. 🌱
+EpiExposure is an open-source project, and it will grow with the community. If you work with plant disease and weather, or any exposure measured over time, I would like to see what you build with it. 🌱
